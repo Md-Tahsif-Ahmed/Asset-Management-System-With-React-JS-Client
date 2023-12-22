@@ -1,14 +1,27 @@
 import { Link } from "react-router-dom";
 import sp_logo from "../../assets/s_logo.png";
+import useAuth from "../../Hook/useAuth";
 const Navbar = () => {
-  
- 
+  const {user, logOut} = useAuth();
+  const handleLogOut = ()=>{
+    logOut()
+    .then(()=>{})
+    .catch(error=>console.error(error));
+  }
     const Navlinks_C = <>
         <Link>Home</Link>
         {/* <Link to='/register'>Register</Link> */}
         <Link to='/menu'>Join as Employee</Link>
-        <Link to='/order'>Join as HR/Admin</Link>
-        <Link to='/login'>Login</Link>
+        <Link to='/regadmin'>Join as HR/Admin</Link>
+        
+        {
+          user ? <>
+          <Link onClick={handleLogOut} >LogOut</Link>
+          </>:
+          <>
+          <Link to='/login'>Login</Link>
+          </>
+        }
     </>
      const Navlinks_E = <>
      <Link>Home</Link>
@@ -57,6 +70,7 @@ const Navbar = () => {
           <Link to='/login'>Login</Link>
           </>
         } */}
+        <Link to='/register'>Sign Up</Link>
           </div>
       </div>
     );

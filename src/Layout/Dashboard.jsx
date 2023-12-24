@@ -1,15 +1,16 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { CiBookmark, CiCalendar, CiEdit, CiHome, CiSquareQuestion  } from "react-icons/ci";
 import Navbar from "../Pages/Shared/Employee/Navbar";
-import Navbar_A from "../Pages/Shared/Admin/Navbar_A";
+// import Navbar_A from "../Pages/Shared/Admin/Navbar_A";
+import { FaUser } from "react-icons/fa";
  
 const Dashboard = () => {
     return (
        <div className="">
         {
             // admin==true?<><Navbar_A></Navbar_A></>:
-            <div>
-            <Navbar></Navbar>
+            <div className="flex">
+           
             <div className="w-64 min-h-screen  bg-orange-400">
                 <ul className="menu p-4"> 
                     <li className=" rounded-lg text-white">
@@ -27,7 +28,10 @@ const Dashboard = () => {
                     <li className=" rounded-lg text-white">
                         
                         <NavLink to='/dashboard/frequently'><CiBookmark size={28}/>Frequently requested items</NavLink></li>
-
+                    <li className=" rounded-lg text-white">
+                    <NavLink to='/dashboard/myemployeelist'><FaUser size={28}/>My Employee List</NavLink></li>
+                    
+                    
 
 
                     
@@ -35,8 +39,9 @@ const Dashboard = () => {
                     <li className=" rounded-lg text-white">
                         
                         <NavLink to='/'><CiHome size={28}/>Home</NavLink></li>
-                    
-                    
+                
+                        
+                        
                     
 
                 </ul>
@@ -44,6 +49,7 @@ const Dashboard = () => {
             <div className="flex-1">
                 <Outlet></Outlet>
             </div>
+            
         </div>
         }
        </div>

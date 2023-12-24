@@ -3,11 +3,13 @@ import { useForm } from "react-hook-form";
 import Swal from 'sweetalert2'
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProvider";
+import useAxiosPublic from "../../../Hook/useAxiosPublic";
 
 
 const RegAdmin = () => {
     const { createUser } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
+    const axiosPublic = useAxiosPublic();
     
     const navigate = useNavigate();
 
@@ -18,7 +20,22 @@ const RegAdmin = () => {
             const res = await createUser(data.name, data.email, data.password, data.dob, data.comname, data.pack, data.logo);
             const loggedUser = res.user;
             console.log(loggedUser);
-            navigate('/payment');
+            const userInfo = {
+                name: data.name,
+                email: data.email
+            };
+
+            const userRes = await axiosPublic.post('/user', userInfo);
+
+            if (userRes.data.insertedId) {
+                reset();
+                Swal.fire({
+                    title: "Created",
+                    text: `User created successfully`,
+                    icon: "success"
+                });
+                navigate('/payment');
+            }
  
         } catch (error) {
             console.error(error);

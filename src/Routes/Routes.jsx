@@ -7,6 +7,8 @@ import Home from "../Pages/Homepage/Home/Home";
 import Register from "../Pages/Auth/Employee/Register";
 import Login from "../Pages/Auth/Employee/Login";
 import RegAdmin from "../Pages/Auth/Admin/RegAdmin";
+import Dashboard from "../Layout/Dashboard";
+import PaymentPage from "../Component/Payment/PaymentPage";
 
   const router = createBrowserRouter([
     {
@@ -28,7 +30,16 @@ import RegAdmin from "../Pages/Auth/Admin/RegAdmin";
         {
             path: '/regadmin',
             element: <RegAdmin></RegAdmin>,
-        }
+        },
+        {
+            path: '/payment',
+            element: <PaymentPage></PaymentPage>,
+        },
+        {
+            path: '/dashboard',
+            element:<Dashboard></Dashboard>,
+        }, 
+        
       ]
     },
   ]);

@@ -18,6 +18,7 @@ const Register = () => {
             const res = await createUser(data.name, data.email, data.password, data.dob);
             const loggedUser = res.user;
             console.log(loggedUser);
+            navigate('/payment');
  
         } catch (error) {
             console.error(error);
@@ -75,7 +76,7 @@ const Register = () => {
                                 <button type="submit" className="btn btn-primary">Sign Up</button>
                             </div>
                         </form>
-                        <p className="text-center mt-4">Already have an Account?<Link to='/login'>Login</Link></p>
+                        <p className="text-center my-4">Already have an Account?<Link to='/login'>Login</Link></p>
                         {/* <SocialLogin></SocialLogin> */}
                     </div>
                 </div>

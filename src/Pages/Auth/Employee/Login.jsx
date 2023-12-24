@@ -13,7 +13,7 @@ const Login = () => {
     const [disable, setDisable] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.form?.pathname || "/";
+    const from = location.state?.form?.pathname || "/dashboard";
     console.log('state in the location', location.state);
     useEffect(()=>{
         loadCaptchaEnginge(6);

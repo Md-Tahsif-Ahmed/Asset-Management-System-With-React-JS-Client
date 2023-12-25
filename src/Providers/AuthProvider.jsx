@@ -23,48 +23,57 @@ const AuthProvider = ({ children }) => {
 
   const createUser = (name, email, password, dob, comname, pack, logo) => {
     console.log(name, email, password, dob, comname, pack, logo);
-
+    setLoading(true);
     return createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log('User created successfully:', userCredential.user);
+        setLoading(false);
         return userCredential;
       })
       .catch((createError) => {
         console.error('Error creating user:', createError);
         setError(createError.message);
+        setLoading(false);
         throw createError;
       });
   };
 
   const signInUser = (email, password) => {
+    setLoading(true);
     return signInWithEmailAndPassword(auth, email, password)
       .catch((signInError) => {
         console.error('Error signing in:', signInError);
         setError(signInError.message);
+        setLoading(false);
         throw signInError;
       });
   };
 
   const signInWithGoogle = () => {
+    setLoading(true);
     return signInWithPopup(auth, provider)
       .catch((googleSignInError) => {
         console.error('Error signing in with Google:', googleSignInError);
         setError(googleSignInError.message);
+        setLoading(false);
         throw googleSignInError;
       });
   };
 
   const logOut = () => {
+    setLoading(true);
     return signOut(auth)
       .catch((signOutError) => {
         console.error('Error signing out:', signOutError);
         setError(signOutError.message);
+        setLoading(false);
         throw signOutError;
       });
   };
 
   useEffect(() => {
     const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
+      setLoading(false);
       const userEmail = currentUser?.email || user?.email;
       const loggedUser = { email: userEmail };
       console.log('current value of the user', currentUser);

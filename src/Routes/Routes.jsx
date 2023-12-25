@@ -10,6 +10,8 @@ import RegAdmin from "../Pages/Auth/Admin/RegAdmin";
 import Dashboard from "../Layout/Dashboard";
 import PaymentPage from "../Component/Payment/PaymentPage";
 import MyEmlpoyeeList from "../Pages/Dashboard/Admin/MyEmlpoyeeList";
+import AddAsset from "../Pages/Dashboard/Admin/AddAsset";
+import AssetList from "../Pages/Dashboard/Admin/AssetList/AssetList";
 
   const router = createBrowserRouter([
     {
@@ -43,7 +45,15 @@ import MyEmlpoyeeList from "../Pages/Dashboard/Admin/MyEmlpoyeeList";
                 {
                     path:'myemployeelist',
                     element: <MyEmlpoyeeList></MyEmlpoyeeList>
-                }
+                },
+                {
+                  path: 'addasset',
+                  element: <AddAsset></AddAsset>,
+                },
+                {
+                  path:'assetlist',
+                  element: <AssetList></AssetList>,
+                },
             ]
         }, 
         

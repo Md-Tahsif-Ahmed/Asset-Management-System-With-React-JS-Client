@@ -16,6 +16,8 @@ import UpdateAss from "../Pages/Dashboard/Admin/AssetList/UpdateAss";
 import MyAsset from "../Pages/Dashboard/Employee/MyAsset/MyAsset";
 import CustomReqPage from "../Pages/Dashboard/Employee/Custom/CustomReqPage";
 import ReqAsset from "../Pages/Dashboard/Employee/Request/ReqAsset";
+import MyTeam from "../Pages/Dashboard/Employee/MyTeam/MyTeam";
+import MyCustomReq from "../Pages/Dashboard/Employee/Custom/MyCustomReq";
 
   const router = createBrowserRouter([
     {
@@ -66,6 +68,10 @@ import ReqAsset from "../Pages/Dashboard/Employee/Request/ReqAsset";
                 },
                 // User or Employee's Path
                 {
+                  path: 'team',
+                  element: <MyTeam></MyTeam>,
+                },
+                {
                   path: 'myassets',
                   element: <MyAsset></MyAsset>
                 },
@@ -77,6 +83,10 @@ import ReqAsset from "../Pages/Dashboard/Employee/Request/ReqAsset";
                   path: 'customreq',
                   element: <CustomReqPage></CustomReqPage>
                 },
+                {
+                  path: 'mycustom',
+                  element: <MyCustomReq></MyCustomReq>
+                }
             ]
         }, 
         

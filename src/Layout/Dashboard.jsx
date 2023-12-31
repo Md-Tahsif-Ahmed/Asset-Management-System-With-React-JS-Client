@@ -51,7 +51,7 @@ const Dashboard = () => {
                 <ul className="menu p-4"> 
                     <li className=" rounded-lg text-white">
                         
-                        <NavLink to='/dashboard/custom'><CiEdit size={28}/>My Custom Requests</NavLink></li>
+                        <NavLink to='/dashboard/mycustom'><CiEdit size={28}/>My Custom Requests</NavLink></li>
                 
                     <li className=" rounded-lg text-white">
                         

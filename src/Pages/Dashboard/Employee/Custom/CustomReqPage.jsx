@@ -28,7 +28,8 @@ const CustomReqPage = () => {
                     type: data.asset_type,
                     price: data.price,
                     why: data.why,
-                    adinfo: data.adinfo
+                    adinfo: data.adinfo,
+                    image: res.data.data.display_url
                 }
                 const customRes = await axiosSecure.post('/custom', assetItem);
                 console.log(customRes.data)
@@ -38,7 +39,7 @@ const CustomReqPage = () => {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: `${data.name} request is created.`,
+                        title: `${data.asset} request is created.`,
                         showConfirmButton: false,
                         timer: 1500
                       });

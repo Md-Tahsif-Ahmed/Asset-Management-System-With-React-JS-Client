@@ -10,9 +10,9 @@ const Navbar = () => {
   }
     
      const Navlinks_E = <>
-     <Link>Home</Link>
+     <Link to='/'>Home</Link>
      {/* <Link to='/register'>Register</Link> */}
-     <Link to='/menu'>My Team</Link>
+     <Link to='/dashboard/team'>My Team</Link>
      <Link to='/dashboard/myassets'>My Assets</Link>
      <Link to='/dashboard/reqassets'>Request for an Asset</Link>
      <Link to='/dashboard/customreq'>Make a Custom Request</Link>

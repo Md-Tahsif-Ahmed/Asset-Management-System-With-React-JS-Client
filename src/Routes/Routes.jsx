@@ -12,6 +12,10 @@ import PaymentPage from "../Component/Payment/PaymentPage";
 import MyEmlpoyeeList from "../Pages/Dashboard/Admin/MyEmlpoyeeList";
 import AddAsset from "../Pages/Dashboard/Admin/AddAsset";
 import AssetList from "../Pages/Dashboard/Admin/AssetList/AssetList";
+import UpdateAss from "../Pages/Dashboard/Admin/AssetList/UpdateAss";
+import MyAsset from "../Pages/Dashboard/Employee/MyAsset/MyAsset";
+import CustomReqPage from "../Pages/Dashboard/Employee/Custom/CustomReqPage";
+import ReqAsset from "../Pages/Dashboard/Employee/Request/ReqAsset";
 
   const router = createBrowserRouter([
     {
@@ -53,6 +57,25 @@ import AssetList from "../Pages/Dashboard/Admin/AssetList/AssetList";
                 {
                   path:'assetlist',
                   element: <AssetList></AssetList>,
+                },
+                {
+                  path: 'upasset/:id',
+                  element: <UpdateAss></UpdateAss>,
+                  loader: ()=> fetch('http://localhost:3000/asset/'),
+                  
+                },
+                // User or Employee's Path
+                {
+                  path: 'myassets',
+                  element: <MyAsset></MyAsset>
+                },
+                {
+                  path: 'reqassets',
+                  element: <ReqAsset></ReqAsset>,
+                },
+                {
+                  path: 'customreq',
+                  element: <CustomReqPage></CustomReqPage>
                 },
             ]
         }, 

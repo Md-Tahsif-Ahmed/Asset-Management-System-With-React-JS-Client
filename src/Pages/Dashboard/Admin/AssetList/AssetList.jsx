@@ -3,14 +3,12 @@ import SectionTittle from "../../../../Component/SectionTittle";
 import useAsset from "../../../../Hook/useAsset";
 import useAxiosSecure from "../../../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 const AssetList = () => {
     const { asset, refetch } = useAsset();
     const axiosSecure=useAxiosSecure();
 
-    const handleUpdate=()=>{
-
-    }
     const handleDelete=(ass)=>{
         Swal.fire({
             title: "Are you sure?",
@@ -71,12 +69,14 @@ const AssetList = () => {
                             </td>
                             <td>{ass.date}</td>
                             <th>
-                                <button
-                                    onClick={() => handleUpdate(ass)}
-                                    className="btn btn-ghost btn-lg text-red-600"
-                                >
-                                    <CiEdit size={28}></CiEdit>
-                                </button>
+                               <Link to={`/upasset/${ass._id}`}>
+                               <button
+                                     
+                                     className="btn btn-ghost btn-lg text-red-600"
+                                 >
+                                     <CiEdit size={28}></CiEdit>
+                                 </button>
+                               </Link>
                             </th>
                             <th>
                                 <button

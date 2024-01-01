@@ -3,6 +3,7 @@ import { CiRead } from "react-icons/ci";
 import SectionTittle from "../../../../Component/SectionTittle";
 import useCustom from "../../../../Hook/useCustom";
 import ReactModal from "react-modal";
+import { Link } from "react-router-dom";
 
 const MyCustomReq = () => {
   const { custom, refetch } = useCustom();
@@ -37,19 +38,19 @@ const MyCustomReq = () => {
               <img src={selectedCustom.image} alt="Custom Asset" />
             </figure>
             <div className="card-body">
-              <h2 className="card-title">Asset name:{selectedCustom.asset}</h2>
+              <h2 className="card-title">Asset name: {selectedCustom.asset}</h2>
               <div className="flex justify-between">
-              <p>Asset Type:{selectedCustom.type}</p>
-              <p>Status:{selectedCustom.status}</p>
+              <p>Asset Type: {selectedCustom.type}</p>
+              <p>Status: {selectedCustom.status}</p>
               </div>
               <p>Why needed: {selectedCustom.why}</p>
-              <p>Additional information: {selectedCustom.addinfo}</p>
+              <p>Additional information: {selectedCustom.adinfo}</p>
               <div className="flex justify-between">
-              <p>Price of Asset:BDT {selectedCustom.price} </p>
+              <p>Price of Asset: BDT {selectedCustom.price} </p>
               <p>Request date: {selectedCustom.date}</p>
               </div>
               <div className="card-actions justify-between mt-6">
-                <button className="btn btn-primary">Update </button>
+                <Link to={`/dashboard/upcustom/${selectedCustom._id}`}><button className="btn btn-primary">Update </button></Link>
                 <button className="btn btn-primary" onClick={closeModal}>
                   Close
                 </button>

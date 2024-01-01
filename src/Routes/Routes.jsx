@@ -18,6 +18,7 @@ import CustomReqPage from "../Pages/Dashboard/Employee/Custom/CustomReqPage";
 import ReqAsset from "../Pages/Dashboard/Employee/Request/ReqAsset";
 import MyTeam from "../Pages/Dashboard/Employee/MyTeam/MyTeam";
 import MyCustomReq from "../Pages/Dashboard/Employee/Custom/MyCustomReq";
+import UpdateCustomReq from "../Pages/Dashboard/Employee/Custom/UpdateCustomReq";
 
   const router = createBrowserRouter([
     {
@@ -86,6 +87,11 @@ import MyCustomReq from "../Pages/Dashboard/Employee/Custom/MyCustomReq";
                 {
                   path: 'mycustom',
                   element: <MyCustomReq></MyCustomReq>
+                },
+                {
+                  path: 'upcustom/:id',
+                  element: <UpdateCustomReq></UpdateCustomReq>,
+                  loader: ()=> fetch('http://localhost:3000/custom'),
                 }
             ]
         }, 

@@ -20,6 +20,7 @@ import MyTeam from "../Pages/Dashboard/Employee/MyTeam/MyTeam";
 import MyCustomReq from "../Pages/Dashboard/Employee/Custom/MyCustomReq";
 import UpdateCustomReq from "../Pages/Dashboard/Employee/Custom/UpdateCustomReq";
 import CustomReqList from "../Pages/Dashboard/Admin/Custom/CustomReqList";
+import AllRequest from "../Pages/Dashboard/Admin/Request/AllRequest";
 
   const router = createBrowserRouter([
     {
@@ -71,6 +72,10 @@ import CustomReqList from "../Pages/Dashboard/Admin/Custom/CustomReqList";
                 {
                   path: 'customreqadmin',
                   element:<CustomReqList></CustomReqList>
+                },
+                {
+                  path: 'allreq',
+                  element: <AllRequest></AllRequest>
                 },
                 // User or Employee's Path
                 {

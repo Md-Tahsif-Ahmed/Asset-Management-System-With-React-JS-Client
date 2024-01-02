@@ -84,7 +84,8 @@ import AllRequest from "../Pages/Dashboard/Admin/Request/AllRequest";
                 },
                 {
                   path: 'myassets',
-                  element: <MyAsset></MyAsset>
+                  element: <MyAsset></MyAsset>,
+                  // loader: ()=> fetch('http://localhost:3000/myreq')
                 },
                 {
                   path: 'reqassets',

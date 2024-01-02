@@ -37,7 +37,7 @@ const Dashboard = () => {
                     <NavLink to='/dashboard/allreq'><FaRegSquare size={28}/>All Requests</NavLink></li>
                     
                 <li className=" rounded-lg text-white">
-                    <NavLink to='/dashboard/allreq'><CiSquareQuestion size={28}/>Custom Requests List</NavLink></li>
+                    <NavLink to='/dashboard/customreqadmin'><CiSquareQuestion size={28}/>Custom Requests List</NavLink></li>
                     
                     
                     

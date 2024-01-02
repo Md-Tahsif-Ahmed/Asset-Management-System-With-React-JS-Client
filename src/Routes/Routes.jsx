@@ -19,6 +19,7 @@ import ReqAsset from "../Pages/Dashboard/Employee/Request/ReqAsset";
 import MyTeam from "../Pages/Dashboard/Employee/MyTeam/MyTeam";
 import MyCustomReq from "../Pages/Dashboard/Employee/Custom/MyCustomReq";
 import UpdateCustomReq from "../Pages/Dashboard/Employee/Custom/UpdateCustomReq";
+import CustomReqList from "../Pages/Dashboard/Admin/Custom/CustomReqList";
 
   const router = createBrowserRouter([
     {
@@ -66,6 +67,10 @@ import UpdateCustomReq from "../Pages/Dashboard/Employee/Custom/UpdateCustomReq"
                   element: <UpdateAss></UpdateAss>,
                   loader: ()=> fetch('http://localhost:3000/asset/'),
                   
+                },
+                {
+                  path: 'customreqadmin',
+                  element:<CustomReqList></CustomReqList>
                 },
                 // User or Employee's Path
                 {

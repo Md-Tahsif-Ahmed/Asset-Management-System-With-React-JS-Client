@@ -5,7 +5,7 @@ import useAxiosPublic from "../../../../Hook/useAxiosPublic";
 import Swal from "sweetalert2";
 
 const AllRequest = () => {
-    const {request} = useRequest();
+    const {request, refetch} = useRequest();
     const axiosPublic = useAxiosPublic();
     const handleApprove = async (id)=>{
         const res = await axiosPublic.patch(`/myreq/approve/${id}`)
@@ -29,6 +29,7 @@ const AllRequest = () => {
                   `
                 }
               });
+              refetch();
           } else {
             // Handle error
             console.error('Failed to update status');

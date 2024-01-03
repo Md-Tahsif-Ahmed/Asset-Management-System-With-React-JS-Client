@@ -25,7 +25,8 @@ const ReqAsset = () => {
       need: need,
       requestDate: new Date().toISOString(),
       email: user.email,
-      name: user.displayName
+      name: user.displayName,
+      status: 'pending'
     };
 
     const req = await axiosSecure.post('/myreq', assetDetails);

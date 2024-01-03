@@ -19,6 +19,14 @@ const Navbar_A = () => {
   <Link to='/login'>Add an Asset</Link>
   <Link to='/login'>All Requests</Link>
   <Link to='/login'>Custom Requests List</Link>
+  {
+          user ? <>
+          <Link onClick={handleLogOut}>LogOut</Link>
+          </>:
+          <>
+          <Link to='/login'>Login</Link>
+          </>
+        }
 
 </>
     return (
@@ -40,14 +48,7 @@ const Navbar_A = () => {
             </ul>
           </div>
           <div className="navbar-end">
-          {/* {
-          user ? <>
-          <button onClick={handleLogOut} className="btn btn-gost">LogOut</button>
-          </>:
-          <>
-          <Link to='/login'>Login</Link>
-          </>
-        } */}
+          
          
           </div>
       </div>

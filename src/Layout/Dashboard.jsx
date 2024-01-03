@@ -8,6 +8,7 @@ import Navbar_A from "../Pages/Shared/Admin/Navbar_A";
  
 const Dashboard = () => {
     const [isAdmin] = useAdmin();
+    console.log(isAdmin);
     return (
        <div className="">
         {
@@ -20,7 +21,7 @@ const Dashboard = () => {
            {
             isAdmin?
             <>
-            <div className="w-64 min-h-screen bg-orange-400">
+            <div className="w-64 min-h-screen bg-[#cf2e2e]">
                 <ul className="menu p-4">
                 <li className=" rounded-lg text-white">
                     <NavLink to='/dashboard/myemployeelist'><FaUser size={28}/>My Employee List</NavLink></li>
@@ -45,9 +46,9 @@ const Dashboard = () => {
             </div>
             </>:
             <>
-            <div>
+          
             
-             <div className="w-64 min-h-screen  bg-orange-400">
+             <div className="w-64 min-h-screen  bg-[#cf2e2e]">
                 <ul className="menu p-4"> 
                     <li className=" rounded-lg text-white">
                         
@@ -78,7 +79,7 @@ const Dashboard = () => {
 
                 </ul>
             </div>
-            </div>
+       
             </>
            }
             <div className="flex-1">
@@ -88,6 +89,9 @@ const Dashboard = () => {
         </div>
         }
        </div>
+    // <div className="">
+    //     {isAdmin ? <h1>Welcome Admin!</h1> : null}
+    // </div>
     );
 };
 

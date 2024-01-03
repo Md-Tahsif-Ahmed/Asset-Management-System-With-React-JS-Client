@@ -17,7 +17,7 @@ const SocialLogin = () => {
             //     console.log(res.data)
             //     navigate('/');
             // })
-            navigate('/');
+            navigate('/dashboard');
         })
     }
     return (

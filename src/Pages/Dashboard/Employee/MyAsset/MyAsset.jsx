@@ -11,6 +11,24 @@ const MyAsset = () => {
   const { request, refetch } = useUserRequest();
   const axiosPublic = useAxiosPublic();
   console.log(request)
+  const handleReturn = async (id, asset) => {
+    const quanAsset = await axiosPublic.patch(`/asset/quantity/${asset}`);
+    console.log(quanAsset.data)
+    const upAsset = await axiosPublic.patch(`/myreq/return/${id}`);
+                console.log(upAsset.data)
+                if (upAsset.data.modifiedCount > 0) {
+                  // Show success popup
+                  refetch();
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: 'Asset is returned.',
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                }
+  };
+
   const handleDelete=(id)=>{
     Swal.fire({
         title: "Are you sure?",
@@ -75,7 +93,7 @@ return (
 
                 {
                   (ass.status === 'approved' && ass.type === 'returnable') &&
-                  <button className="btn">
+                  <button className="btn" onClick={()=>handleReturn(ass._id, ass.asset)}>
                    Return
                 </button>
                 }
@@ -84,6 +102,13 @@ return (
                   Cencel
                 </button>
                 )}
+
+                {
+                  ass.status ==='returned' && (
+                    <button disabled className='btn'>Return</button>
+
+                  )
+                }
 
                  </td>
   

@@ -38,9 +38,9 @@ const UpcomingEvent = () => {
       <SectionTittle heading="Upcoming Events" />
       <div className="my-10 grid gap-4 grid-cols-1 lg:grid-cols-3 ml-4">
         {upcomingBirthdays.map((u) => (
-          <div key={u.id} className="card w-96 bg-base-300 shadow-xl">
+          <div key={u._id} className="card w-96 rounded-full bg-base-300 shadow-xl">
             <figure className="px-10 pt-10">
-              <img src={u.logo} alt={u.name} className="rounded-xl" />
+              <img src={u.logo} alt={u.name} className="rounded-full" />
             </figure>
             <div className="card-body items-center text-center">
               <h2 className="card-title">Name: {u.name}</h2>

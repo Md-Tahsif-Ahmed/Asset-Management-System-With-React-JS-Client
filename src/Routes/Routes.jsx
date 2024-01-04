@@ -22,6 +22,7 @@ import UpdateCustomReq from "../Pages/Dashboard/Employee/Custom/UpdateCustomReq"
 import CustomReqList from "../Pages/Dashboard/Admin/Custom/CustomReqList";
 import AllRequest from "../Pages/Dashboard/Admin/Request/AllRequest";
 import Profile from "../Pages/Dashboard/Employee/Profile";
+import AddEmployee from "../Pages/Dashboard/Admin/AddEmployee/AddEmployee";
 
   const router = createBrowserRouter([
     {
@@ -44,10 +45,7 @@ import Profile from "../Pages/Dashboard/Employee/Profile";
             path: '/regadmin',
             element: <RegAdmin></RegAdmin>,
         },
-        {
-            path: '/payment',
-            element: <PaymentPage></PaymentPage>,
-        },
+        
         {
             path: '/dashboard',
             element:<Dashboard></Dashboard>,
@@ -65,6 +63,10 @@ import Profile from "../Pages/Dashboard/Employee/Profile";
                   element: <AssetList></AssetList>,
                 },
                 {
+                  path: 'addemployee',
+                  element: <AddEmployee></AddEmployee>
+                },
+                {
                   path: 'upasset/:id',
                   element: <UpdateAss></UpdateAss>,
                   loader: ()=> fetch('http://localhost:3000/asset/'),
@@ -78,6 +80,10 @@ import Profile from "../Pages/Dashboard/Employee/Profile";
                   path: 'allreq',
                   element: <AllRequest></AllRequest>
                 },
+                {
+                  path: 'payment',
+                  element: <PaymentPage></PaymentPage>,
+              },
                 // User or Employee's Path
                 {
                   path: 'team',

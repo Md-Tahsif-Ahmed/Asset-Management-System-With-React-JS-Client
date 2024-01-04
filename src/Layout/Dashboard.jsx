@@ -26,7 +26,7 @@ const Dashboard = () => {
                 <li className=" rounded-lg text-white">
                     <NavLink to='/dashboard/myemployeelist'><FaUser size={28}/>My Employee List</NavLink></li>
                 <li className=" rounded-lg text-white">
-                    <NavLink to='/dashboard/addemlist'><FaUser size={28}/>Add an Employee</NavLink></li>
+                    <NavLink to='/dashboard/addemployee'><FaUser size={28}/>Add an Employee</NavLink></li>
                     
                 <li className=" rounded-lg text-white">
                     <NavLink to='/dashboard/assetlist'><FaGlasses size={28}/>Asset List</NavLink></li>

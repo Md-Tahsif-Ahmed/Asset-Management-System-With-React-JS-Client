@@ -11,7 +11,11 @@ import useAuth from "../../../../Hook/useAuth";
 const ReqAsset = () => {
   const auth = useAuth();
   const {user} = auth;
-  const { asset, refetch } = useAsset();
+  const [assetType, setAssetType] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+
+  console.log(searchTerm)
+  const { asset, refetch } = useAsset({assetType, searchTerm });
   const axiosSecure = useAxiosSecure();
   const [showModal, setShowModal] = useState(false);
   const [selectedCustom, setSelectedCustom] = useState(null);
@@ -105,6 +109,19 @@ const ReqAsset = () => {
   return (
     <div>
       <SectionTittle heading=" Request Assets"></SectionTittle>
+
+      <div className='flex justify-around items-center mb-10'>
+            {/* Add your filter inputs (status, assetType) and search input here */}
+          
+            <input type="text" placeholder="Search" onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered input-error w-full max-w-xs" />
+
+            <select className="select select-error w-full max-w-xs" onChange={(e) => setAssetType(e.target.value)}>
+                <option value="">Asset Types</option>
+                <option value="returnable">returnable</option>
+                <option value="non-returnable">non-returnable</option>
+            </select>
+ 
+        </div>
       <div className="overflow-x-auto ml-8">
         <table className="table table-zebra w-full">
           <thead>

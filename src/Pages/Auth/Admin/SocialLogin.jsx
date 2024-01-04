@@ -23,7 +23,7 @@ const SocialLogin = () => {
     return (
         <div className="text-center mb-4">
             <div className="divider"></div>
-            <button onClick={handleGoogle} className="btn btn-outline "> 
+            <button onClick={handleGoogle} className="btn bg-[#7E2553] text-white hover:bg-[#7E2553]"> 
                 <FaGoogle></FaGoogle>Google
             </button>
         </div>

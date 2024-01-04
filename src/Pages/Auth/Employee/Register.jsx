@@ -92,7 +92,7 @@ const Register = () => {
                                 {errors.dob && <span className="text-red-600">This field is required</span>}
                             </div>
                             <div className="form-control mt-6">
-                                <button type="submit" className="btn btn-primary">Sign Up</button>
+                                <button type="submit" className="btn bg-[#7E2553] text-white hover:bg-[#7E2553]">Sign Up</button>
                             </div>
                         </form>
                         <p className="text-center my-4">Already have an Account?<Link to='/login'>Login</Link></p>

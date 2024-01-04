@@ -7,22 +7,23 @@ import b from '../../assets/ac.webp';
 
 const Banner = () => {
   return (
-    <div className="">
-        <Carousel showThumbs={true} className="carousel-container">
-        <div className="relative">
-            <img src={a} alt="Image A" className="carousel-image" />
-            <button className="absolute bottom-10 lg:left-96  right-36 btn btn-outline">
-            Join as HR/Admin
-            </button>
-        </div>
-        <div className="carousel-container">
-            <img src={b} alt="Image B" className="carousel-image" />
-            <button className="absolute bottom-10 lg:left-96  right-36 btn btn-outline">
-            Join as Employee
-            </button>
-        </div>
-        </Carousel>
+    <div className="carousel w-full mb-10">
+  <div id="slide1" className="carousel-item relative w-full">
+    <img src={a} className="w-full h-[400px]" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide2" className="btn btn-circle bg-red-500 border-0">❮</a> 
+      <a href="#slide2" className="btn btn-circle bg-red-500 border-0">❯</a>
     </div>
+  </div> 
+  <div id="slide2" className="carousel-item relative w-full">
+    <img src= {b} className="w-full h-[400px]" />
+    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+      <a href="#slide1" className="btn btn-circle bg-red-500 border-0">❮</a> 
+      <a href="#slide1" className="btn btn-circle bg-red-500 border-0">❯</a>
+    </div>
+  </div> 
+   
+</div>
   );
 };
 

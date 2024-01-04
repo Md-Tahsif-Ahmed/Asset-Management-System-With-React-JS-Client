@@ -12,13 +12,9 @@ const Navbar_A = () => {
   
   const Navlinks_A = <>
   <Link>Home</Link>
-  {/* <Link to='/register'>Register</Link> */}
-  <Link to='/menu'>My Employee List</Link>
-  <Link to='/order'>Add an Employee</Link>
-  <Link to='/login'>Asset List</Link>
-  <Link to='/login'>Add an Asset</Link>
-  <Link to='/login'>All Requests</Link>
-  <Link to='/login'>Custom Requests List</Link>
+  <Link to='/pendreq'>Pending requests</Link>
+  <Link to='/topreq'>Top most requested items</Link>
+  <Link to='/limstock'>Limited Stock items</Link>
   {
           user ? <>
           <Link onClick={handleLogOut}>LogOut</Link>
@@ -30,7 +26,7 @@ const Navbar_A = () => {
 
 </>
     return (
-        <div className="navbar  bg-opacity-25 bg-black  text-white">
+        <div className="navbar  bg-[#cf2e2e]  text-white">
           <div className="navbar-start">
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

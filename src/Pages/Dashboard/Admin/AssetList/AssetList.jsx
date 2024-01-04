@@ -4,9 +4,15 @@ import useAsset from "../../../../Hook/useAsset";
 import useAxiosSecure from "../../../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const AssetList = () => {
-    const { asset, refetch } = useAsset();
+  const [assetType, setAssetType] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const [sortBy, setSortBy] = useState('');
+
+  console.log(searchTerm)
+  const { asset, refetch } = useAsset({assetType, searchTerm, sortBy });
     const axiosSecure=useAxiosSecure();
 
     const handleDelete=(ass)=>{
@@ -42,6 +48,23 @@ const AssetList = () => {
     return (
         <div>
             <SectionTittle heading="Asset List"></SectionTittle>
+            <div className='flex justify-around items-center mb-10'>
+            {/* Add your filter inputs (status, assetType) and search input here */}
+          
+            <input type="text" placeholder="Search" onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered input-error w-full max-w-xs" />
+
+            <select className="select select-error w-full max-w-xs" onChange={(e) => setAssetType(e.target.value)}>
+                <option value="">Asset Types</option>
+                <option value="returnable">returnable</option>
+                <option value="non-returnable">non-returnable</option>
+            </select>
+            <select  onChange={(e) => setSortBy(e.target.value)}>
+                <option value="">Sort By</option>
+                <option value="asc">Ascending</option>
+                <option value="dsc">Descending</option>
+            </select>
+ 
+        </div>
             <div className="overflow-x-auto">
             <table className="table table-zebra w-full">
                 {/* head */}

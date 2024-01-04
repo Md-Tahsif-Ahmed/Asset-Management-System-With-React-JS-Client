@@ -2,13 +2,17 @@ import useUserRequest from '../../../../Hook/useUserRequest';
 import SectionTittle from '../../../../Component/SectionTittle';
 import Swal from 'sweetalert2';
 import useAxiosPublic from '../../../../Hook/useAxiosPublic';
+import { useState } from 'react';
 
  
  
  
  
 const MyAsset = () => {
-  const { request, refetch } = useUserRequest();
+  const [status, setStatus] = useState('');
+  const [assetType, setAssetType] = useState('');
+  const [searchTerm, setSearchTerm] = useState('');
+  const { request, loading, refetch } = useUserRequest({ status, assetType, searchTerm }); // Pass parameters as an object
   const axiosPublic = useAxiosPublic();
   console.log(request)
   const handleReturn = async (id, asset) => {
@@ -62,6 +66,27 @@ const MyAsset = () => {
 return (
     <div>
       <SectionTittle heading="My Asset List" />
+      <div className='flex justify-around items-center mb-10'>
+            {/* Add your filter inputs (status, assetType) and search input here */}
+          
+            <input type="text" placeholder="Search" onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered input-error w-full max-w-xs" />
+
+             
+            <select className="select select-error w-full max-w-xs" onChange={(e) => setStatus(e.target.value)}>
+              <option value="">All Status</option>
+              <option value="approved">approved</option>
+              <option value="pending">pending</option>
+              <option value="returned">returned</option>
+              <option value="rejected">rejected</option>
+            </select>
+
+            <select className="select select-error w-full max-w-xs" onChange={(e) => setAssetType(e.target.value)}>
+                <option value="">Asset Types</option>
+                <option value="returnable">returnable</option>
+                <option value="non-returnable">non-returnable</option>
+            </select>
+ 
+        </div>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
         <thead>

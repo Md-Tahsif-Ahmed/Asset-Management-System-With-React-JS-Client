@@ -3,7 +3,7 @@ const Footer = () => {
     
        <footer className="">
          <div className="grid grid-cols-2">
-          <div className="bg-[#1F2937] text-white p-10 text-center ">
+          <div className="bg-[#7E2553] text-white p-10 text-center ">
             <header className="title mb-2 font-medium text-lg">CONTACT US</header>
                 <p className="font-medium text-xs">123 ABS Street, Uni 21, Bangladesh</p>
                 <p className="font-medium text-xs">+88 123456789</p>
@@ -11,7 +11,7 @@ const Footer = () => {
                 <p className="font-medium text-xs">Sat - Sun: 10:00 - 23:00</p>
 
           </div>
-          <div className="bg-[#111827] text-white p-10 text-center space-y-2">
+          <div className="bg-[#cf2e2e] text-white p-10 text-center space-y-2">
           <header className="title font-medium text-lg">Follow US</header>
             <p className="mb-2 font-medium text-xs">Join us on social media</p>
                     <div className=" flex space-x-4 justify-center items-center">
@@ -21,7 +21,7 @@ const Footer = () => {
                     </div>
           </div>
         </div>
-        <div className="bg-[#151515] text-white p-4 text-center font-medium text-xs">
+        <div className="bg-[#1D2B53] text-white p-4 text-center font-medium text-xs">
         <p>Copyright © CulinaryCloud. All rights reserved.</p>
       </div>
        </footer>

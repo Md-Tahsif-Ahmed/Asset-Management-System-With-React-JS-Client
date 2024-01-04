@@ -5,7 +5,7 @@ import Package from "../Package";
 const Home = () => {
     return (
         <div className="">
-           {/* <Banner></Banner> */}
+           <Banner></Banner>
            <About></About>
            <Package></Package>
         </div>

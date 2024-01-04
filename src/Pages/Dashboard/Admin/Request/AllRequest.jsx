@@ -3,9 +3,12 @@ import SectionTittle from "../../../../Component/SectionTittle";
 import useRequest from "../../../../Hook/useRequest";
 import useAxiosPublic from "../../../../Hook/useAxiosPublic";
 import Swal from "sweetalert2";
+import { useState } from "react";
 
 const AllRequest = () => {
-    const {request, refetch} = useRequest();
+    const [searchTerm, setSearchTerm] = useState('');
+    console.log(searchTerm)
+    const {request, refetch} = useRequest({searchTerm });
     const axiosPublic = useAxiosPublic();
     const handleApprove = async (id)=>{
         const res = await axiosPublic.patch(`/myreq/approve/${id}`)
@@ -68,6 +71,14 @@ const AllRequest = () => {
     return (
         <div>
         <SectionTittle heading="All Request List"></SectionTittle>
+        <div className='flex justify-end mr-6 items-center mb-10'>
+            {/* Add your filter inputs (status, assetType) and search input here */}
+          
+            <input type="text" placeholder="Search By Email" onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered input-error w-full max-w-xs" />
+
+             
+ 
+        </div>
   <div className="overflow-x-auto">
     <table className="table table-zebra w-full">
       {/* head */}

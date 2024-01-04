@@ -4,6 +4,7 @@ import useAxiosPublic from "../../../../Hook/useAxiosPublic";
 import useAxiosSecure from "../../../../Hook/useAxiosSecure";
 import Swal from "sweetalert2";
 import SectionTittle from "../../../../Component/SectionTittle";
+import useAuth from "../../../../Hook/useAuth";
 
 const CustomReqPage = () => {
     const { register, handleSubmit, reset } = useForm();
@@ -11,6 +12,7 @@ const CustomReqPage = () => {
     const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
     const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
+    const {user} = useAuth();
     const onSubmit = async (data)=>{
         console.log(data);
               // image upload to imgbb and then get an url
@@ -30,7 +32,9 @@ const CustomReqPage = () => {
                     why: data.why,
                     adinfo: data.adinfo,
                     image: res.data.data.display_url,
-                    date: data.date
+                    date: data.date,
+                    email: user.email,
+                    name: user.displayName
                 }
                 const customRes = await axiosSecure.post('/custom', assetItem);
                 console.log(customRes.data)

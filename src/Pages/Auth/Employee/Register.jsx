@@ -23,7 +23,8 @@ const Register = () => {
             
             const userInfo = {
                 name: data.name,
-                email: data.email
+                email: data.email,
+                dob: data.dob
             };
 
             const userRes = await axiosPublic.post('/user', userInfo);

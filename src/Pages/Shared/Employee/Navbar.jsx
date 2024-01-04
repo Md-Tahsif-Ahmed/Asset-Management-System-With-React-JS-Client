@@ -16,7 +16,7 @@ const Navbar = () => {
      <Link to='/dashboard/myassets'>My Assets</Link>
      <Link to='/dashboard/reqassets'>Request for an Asset</Link>
      <Link to='/dashboard/customreq'>Make a Custom Request</Link>
-     <Link to='/login'>Profile</Link>
+     <Link to='/dashboard/profile'>Profile</Link>
      {
           user ? <>
           <Link onClick={handleLogOut} >LogOut</Link>

@@ -22,7 +22,12 @@ const RegAdmin = () => {
             console.log(loggedUser);
             const userInfo = {
                 name: data.name,
-                email: data.email
+                company_name: data.comname,
+                logo:data.logo,
+                email: data.email,
+                dob: data.dob,
+                pack: data.pack
+
             };
 
             const userRes = await axiosPublic.post('/user', userInfo);

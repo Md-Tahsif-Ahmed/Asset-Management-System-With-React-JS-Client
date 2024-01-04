@@ -1,4 +1,4 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { useLoaderData, useNavigate, useParams } from "react-router-dom";
 import SectionTittle from "../../../../Component/SectionTittle";
 import useAxiosSecure from "../../../../Hook/useAxiosSecure";
 import { FaEdit } from "react-icons/fa";
@@ -16,6 +16,7 @@ const UpdateAss = () => {
     const { _id, product, type, date, quantity} = ass;
     const { register, handleSubmit, reset } = useForm();
     const axiosSecure = useAxiosSecure();
+    const navigate = useNavigate();
     const onSubmit = async (data)=>{
         console.log(data);
         const assetItem = {
@@ -36,6 +37,7 @@ const UpdateAss = () => {
                         showConfirmButton: false,
                         timer: 1500
                       });
+                      navigate('/dashboard/assetlist')
                 }
     }
     return (
@@ -50,6 +52,7 @@ const UpdateAss = () => {
                         <input
                             type="text"
                             placeholder="Product Name"
+                            defaultValue={product}
                             {...register('product', { required: true })}
                             required
                             className="input input-bordered w-full" />
@@ -60,9 +63,9 @@ const UpdateAss = () => {
                             <label className="label">
                                 <span className="label-text">Product Type*</span>
                             </label>
-                            <select defaultValue="default" {...register('pro_type', { required: true })}
+                            <select defaultValue={type} {...register('pro_type', { required: true })}
                                 className="select select-bordered w-full">
-                                <option disabled value="default">Select a Product</option>
+                                {/* <option disabled value={type}>{type}</option> */}
                                 <option value="returnable">returnable</option>
                                 <option value="non-returnable">non-returnable</option>
                                
@@ -78,6 +81,7 @@ const UpdateAss = () => {
                             <input
                                 type="number"
                                 placeholder="Quantity"
+                                defaultValue={quantity}
                                 {...register('quantity', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>
@@ -88,7 +92,7 @@ const UpdateAss = () => {
                             <input
                                 type="date"
                                 placeholder="Current Date"
-                                defaultValue={new Date().toISOString().split('T')[0]}
+                                defaultValue={date}
                                 {...register('date', { required: true })}
                                 className="input input-bordered w-full" />
                         </div>

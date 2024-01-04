@@ -35,6 +35,36 @@ const AllRequest = () => {
             console.error('Failed to update status');
           }
         }
+
+        const handleReject = async (id)=>{
+            const res = await axiosPublic.patch(`/myreq/reject/${id}`)
+            console.log(res.data)
+            if (res.data.success) {
+                // Refresh the custom data or update the status locally
+                Swal.fire({
+                    title: "Rejected",
+                    showClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                      `
+                    },
+                    hideClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                      `
+                    }
+                  });
+                  refetch();
+              } else {
+                // Handle error
+                console.error('Failed to update status');
+              }
+    
+        }
     return (
         <div>
         <SectionTittle heading="All Request List"></SectionTittle>
@@ -73,9 +103,9 @@ const AllRequest = () => {
                 <FcApprove size={35}></FcApprove>
               </button>
               <button
-                className="btn">
-                 <FcDisapprove size={35}></FcDisapprove>
-              </button>
+                    className="btn" onClick={()=>handleReject(ass._id)}>
+                     <FcDisapprove size={35}></FcDisapprove>
+                  </button>
 
             </th>
           </tr>

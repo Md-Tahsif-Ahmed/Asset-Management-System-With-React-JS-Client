@@ -69,7 +69,7 @@ const AssetList = () => {
                             </td>
                             <td>{ass.date}</td>
                             <th>
-                               <Link to={`/upasset/${ass._id}`}>
+                               <Link to={`/dashboard/upasset/${ass._id}`}>
                                <button
                                      
                                      className="btn btn-ghost btn-lg text-red-600"

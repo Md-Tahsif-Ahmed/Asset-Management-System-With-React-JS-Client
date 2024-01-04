@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { CiRead } from "react-icons/ci";
 import SectionTittle from "../../../../Component/SectionTittle";
-import useCustom from "../../../../Hook/useCustom";
 import ReactModal from "react-modal";
 import { Link } from "react-router-dom";
+import useUserCustom from "../../../../Hook/useUserCustom";
 
 const MyCustomReq = () => {
-  const { custom, refetch } = useCustom();
+  const { custom, refetch } = useUserCustom();
   const [showModal, setShowModal] = useState(false);
   const [selectedCustom, setSelectedCustom] = useState(null);
 

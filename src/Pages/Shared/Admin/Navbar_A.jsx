@@ -1,20 +1,26 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import sp_logo from "../../../assets/s_logo.png";
 import useAuth from "../../../Hook/useAuth";
 const Navbar_A = () => {
   const {user, logOut} = useAuth();
+  const navigate = useNavigate();
   const handleLogOut = ()=>{
     logOut()
-    .then(()=>{})
+    .then(()=>{
+      navigate('/login')
+    })
     .catch(error=>console.error(error));
   }
    
   
   const Navlinks_A = <>
-  <Link>Home</Link>
-  <Link to='/pendreq'>Pending requests</Link>
-  <Link to='/topreq'>Top most requested items</Link>
-  <Link to='/limstock'>Limited Stock items</Link>
+  <Link to='/dashboard/adhome'>Home</Link>
+  <Link to='/dashboard/myemployeelist'>My Employee List</Link>
+  <Link to='/dashboard/addemployee'>Add an Employee</Link>
+  <Link to='/dashboard/assetlist'>Asset List</Link>
+  <Link to='/dashboard/addasset'>Add an Asset</Link>
+  <Link to='/dashboard/allreq'>All Requests</Link>
+  <Link to='/dashboard/customreqadmin'>Custom Requests List</Link>
   {
           user ? <>
           <Link onClick={handleLogOut}>LogOut</Link>

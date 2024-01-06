@@ -1,7 +1,7 @@
 const Footer = () => {
     return (
     
-       <footer className="">
+       <footer className="bottom-0 left-0 right-0">
          <div className="grid grid-cols-2">
           <div className="bg-[#7E2553] text-white p-10 text-center ">
             <header className="title mb-2 font-medium text-lg">CONTACT US</header>

@@ -13,7 +13,7 @@ const Login = () => {
     const [disable, setDisable] = useState(true);
     const navigate = useNavigate();
     const location = useLocation();
-    const from = location.state?.form?.pathname || "/dashboard";
+    const from = location.state?.form?.pathname || "/dashboard/emhome";
     console.log('state in the location', location.state);
     useEffect(()=>{
         loadCaptchaEnginge(6);
@@ -68,7 +68,7 @@ const Login = () => {
     }
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div className="flex justify-center mt-20">
                 <div className="hero-content flex-col lg:flex-row">
                     
                     <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

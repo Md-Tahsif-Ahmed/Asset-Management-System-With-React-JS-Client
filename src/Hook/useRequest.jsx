@@ -9,8 +9,10 @@ const useRequest = ({searchTerm }) => {
         queryFn: async() =>{
             const res = await axiosPublic.get('/myreq', {params: {searchTerm },});
             return res.data;
+            
         }
     })
+    
     return { request, loading, refetch };
 }
 

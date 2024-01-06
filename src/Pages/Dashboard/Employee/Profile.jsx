@@ -1,11 +1,13 @@
 import { CiEdit } from "react-icons/ci";
 import SectionTittle from "../../../Component/SectionTittle";
 import useAuth from "../../../Hook/useAuth";
+import { Link } from "react-router-dom";
+ 
 
 const Profile = () => {
     const {user} = useAuth();
     return (
-        <div>
+        <div className="mt-20">
             <SectionTittle heading="My Profile "></SectionTittle>
       <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
@@ -24,18 +26,23 @@ const Profile = () => {
             
               <tr>
                  
-                <td>{user.displayName}</td>
+                {
+                  user ? <>
+                  <td>{user.displayName}</td>
                 <td>{user.email}</td>
                 <td>{user.dob}</td>
                  
                 <th>
-                  <button
+                  <Link to='/dashboard/updateprofile'>
+                    <button
                     className="btn"
                      
                   >
                     <CiEdit size={28}></CiEdit>
-                  </button>
-                </th>
+                  </button></Link>
+                </th></>:
+                null
+                }
               </tr>
             
           </tbody>

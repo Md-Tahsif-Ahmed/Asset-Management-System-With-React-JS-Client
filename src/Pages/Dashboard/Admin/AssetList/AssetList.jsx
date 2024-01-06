@@ -48,7 +48,7 @@ const AssetList = () => {
     return (
         <div>
             <SectionTittle heading="Asset List"></SectionTittle>
-            <div className='flex justify-around items-center mb-10'>
+            <div className='flex flex-col lg:flex-row space-y-4 ml-4 lg:ml-0 lg:space-y-0 lg:justify-around lg:items-center mb-4 lg:mb-10'>
             {/* Add your filter inputs (status, assetType) and search input here */}
           
             <input type="text" placeholder="Search" onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered input-error w-full max-w-xs" />

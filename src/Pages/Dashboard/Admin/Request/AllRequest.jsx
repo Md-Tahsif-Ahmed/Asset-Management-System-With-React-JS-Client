@@ -71,7 +71,7 @@ const AllRequest = () => {
     return (
         <div>
         <SectionTittle heading="All Request List"></SectionTittle>
-        <div className='flex justify-end mr-6 items-center mb-10'>
+        <div className='flex flex-col lg:flex-row ml-4 lg:ml-0 space-y-4 lg:space-y-0 lg:justify-around lg:items-center mb-4 lg:mb-10'>
             {/* Add your filter inputs (status, assetType) and search input here */}
           
             <input type="text" placeholder="Search By Email" onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered input-error w-full max-w-xs" />
@@ -124,6 +124,8 @@ const AllRequest = () => {
       </tbody>
     </table>
   </div>
+  {/* Pagination for the All request */}
+  
     </div>
     );
 };

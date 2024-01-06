@@ -64,30 +64,39 @@ const MyAsset = () => {
     });
 }
 return (
-    <div>
-      <SectionTittle heading="My Asset List" />
-      <div className='flex justify-around items-center mb-10'>
-            {/* Add your filter inputs (status, assetType) and search input here */}
-          
-            <input type="text" placeholder="Search" onChange={(e) => setSearchTerm(e.target.value)} className="input input-bordered input-error w-full max-w-xs" />
+  <div className='p-4 mt-10'>
+  <SectionTittle heading="My Asset List" />
+  <div className='flex flex-col lg:flex-row space-y-4 lg:space-y-0 lg:justify-around lg:items-center mb-4 lg:mb-10'>
+    {/* Add your filter inputs (status, assetType) and search input here */}
+    <input
+      type="text"
+      placeholder="Search"
+      onChange={(e) => setSearchTerm(e.target.value)}
+      className="input input-bordered input-error w-full max-w-xs lg:w-auto"
+    />
 
-             
-            <select className="select select-error w-full max-w-xs" onChange={(e) => setStatus(e.target.value)}>
-              <option value="">All Status</option>
-              <option value="approved">approved</option>
-              <option value="pending">pending</option>
-              <option value="returned">returned</option>
-              <option value="rejected">rejected</option>
-            </select>
+    <select
+      className="select select-error w-full max-w-xs lg:w-auto"
+      onChange={(e) => setStatus(e.target.value)}
+    >
+      <option value="">All Status</option>
+      <option value="approved">approved</option>
+      <option value="pending">pending</option>
+      <option value="returned">returned</option>
+      <option value="rejected">rejected</option>
+    </select>
 
-            <select className="select select-error w-full max-w-xs" onChange={(e) => setAssetType(e.target.value)}>
-                <option value="">Asset Types</option>
-                <option value="returnable">returnable</option>
-                <option value="non-returnable">non-returnable</option>
-            </select>
- 
-        </div>
-      <div className="overflow-x-auto">
+    <select
+      className="select select-error w-full max-w-xs lg:w-auto"
+      onChange={(e) => setAssetType(e.target.value)}
+    >
+      <option value="">Asset Types</option>
+      <option value="returnable">returnable</option>
+      <option value="non-returnable">non-returnable</option>
+    </select>
+  </div>
+
+  <div className="overflow-x-auto">
         <table className="table table-zebra w-full">
         <thead>
             <tr>
@@ -144,8 +153,7 @@ return (
           </tbody>
         </table>
       </div>
-   
-    </div>
+</div>
   );
 };
 

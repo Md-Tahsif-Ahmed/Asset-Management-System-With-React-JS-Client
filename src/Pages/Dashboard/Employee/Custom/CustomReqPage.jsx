@@ -53,7 +53,7 @@ const CustomReqPage = () => {
             console.log( 'with image url', res.data);
     }
     return (
-        <div>
+        <div className="mt-20">
             <SectionTittle heading="Make a Custom Request"></SectionTittle>
             <div className="ml-8">
                 <form onSubmit={handleSubmit(onSubmit)}>

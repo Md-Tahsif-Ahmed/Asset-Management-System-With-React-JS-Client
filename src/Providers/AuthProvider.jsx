@@ -103,7 +103,7 @@ const AuthProvider = ({ children }) => {
     };
   }, []);
 
-  const authInfo = { user, createUser, signInUser, signInWithGoogle, logOut };
+  const authInfo = { user, loading, createUser, signInUser, signInWithGoogle, logOut };
 
   return (
     <AuthContext.Provider value={authInfo}>

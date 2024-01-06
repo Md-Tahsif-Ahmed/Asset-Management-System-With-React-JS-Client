@@ -5,7 +5,7 @@ import UpcommingEvent from "./UpcommingEvent";
 
 const MyTeam = () => {
     return (
-        <div className="">
+        <div className="max-w-7xl mx-auto mt-20">
             
             <UpcommingEvent></UpcommingEvent>
             <TeamMember></TeamMember>

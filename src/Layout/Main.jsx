@@ -4,12 +4,14 @@ import Footer from "../Pages/Shared/Footer";
 const Main = () => {
     const location = useLocation();
     console.log(location);
-    const noNavFoot = location.pathname.includes('/dashboard')
+    const noNavFoot = location.pathname.includes('/dashboard') 
+   
     return (
         <div>
            {noNavFoot ||  <Navbar></Navbar>}
             <Outlet></Outlet>
             {noNavFoot || <Footer></Footer>}
+          
 
         </div>
     );

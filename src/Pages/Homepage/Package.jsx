@@ -5,7 +5,7 @@ const Package = () => {
 
       <div className="my-10">
         <SectionTittle heading="Packages"></SectionTittle>
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 max-w-7xl mx-auto mt-10">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-3 max-w-7xl pl-4 lg:pl-0 mx-auto mt-10">
             <div className="card w-96 bg-[#7E2553] text-white shadow-xl">
                 <div className="card-body">
                     <h2 className="card-title">Normal Package</h2>

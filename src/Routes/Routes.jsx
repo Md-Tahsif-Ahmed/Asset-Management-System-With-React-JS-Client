@@ -23,6 +23,10 @@ import CustomReqList from "../Pages/Dashboard/Admin/Custom/CustomReqList";
 import AllRequest from "../Pages/Dashboard/Admin/Request/AllRequest";
 import Profile from "../Pages/Dashboard/Employee/Profile";
 import AddEmployee from "../Pages/Dashboard/Admin/AddEmployee/AddEmployee";
+import PrivateRoute from "./PrivateRoute";
+import AdminRoute from "./AdminRoute";
+import EmployeeHome from "../Pages/Employee/Homepage/EmployeeHome";
+import AdminHome from "../Pages/Admin/Homepage/AdminHome";
 
   const router = createBrowserRouter([
     {
@@ -52,59 +56,64 @@ import AddEmployee from "../Pages/Dashboard/Admin/AddEmployee/AddEmployee";
             children:[
                 {
                     path:'myemployeelist',
-                    element: <MyEmlpoyeeList></MyEmlpoyeeList>
+                    element: <AdminRoute><MyEmlpoyeeList></MyEmlpoyeeList></AdminRoute>
                 },
                 {
                   path: 'addasset',
-                  element: <AddAsset></AddAsset>,
+                  element: <AdminRoute><AddAsset></AddAsset></AdminRoute>,
                 },
                 {
                   path:'assetlist',
-                  element: <AssetList></AssetList>,
+                  element: <AdminRoute><AssetList></AssetList></AdminRoute>,
                 },
                 {
                   path: 'addemployee',
-                  element: <AddEmployee></AddEmployee>
+                  element: <AdminRoute><AddEmployee></AddEmployee></AdminRoute>
                 },
                 {
                   path: 'upasset/:id',
-                  element: <UpdateAss></UpdateAss>,
+                  element: <AdminRoute><UpdateAss></UpdateAss></AdminRoute>,
                   loader: ()=> fetch('http://localhost:3000/asset/'),
                   
                 },
                 {
                   path: 'customreqadmin',
-                  element:<CustomReqList></CustomReqList>
+                  element:<AdminRoute><CustomReqList></CustomReqList></AdminRoute>
                 },
                 {
                   path: 'allreq',
-                  element: <AllRequest></AllRequest>
+                  element: <AdminRoute><AllRequest></AllRequest></AdminRoute>
                 },
                 {
                   path: 'payment',
-                  element: <PaymentPage></PaymentPage>,
+                  element: <AdminRoute><PaymentPage></PaymentPage></AdminRoute>,
+              },
+              {
+                path: 'adhome',
+                element: <AdminRoute><AdminHome></AdminHome></AdminRoute>
+
               },
                 // User or Employee's Path
                 {
                   path: 'team',
-                  element: <MyTeam></MyTeam>,
+                  element: <PrivateRoute><MyTeam></MyTeam></PrivateRoute>,
                 },
                 {
                   path: 'myassets',
-                  element: <MyAsset></MyAsset>,
+                  element: <PrivateRoute><MyAsset></MyAsset></PrivateRoute>,
                   // loader: ()=> fetch('http://localhost:3000/myreq')
                 },
                 {
                   path: 'reqassets',
-                  element: <ReqAsset></ReqAsset>,
+                  element: <PrivateRoute><ReqAsset></ReqAsset></PrivateRoute>,
                 },
                 {
                   path: 'customreq',
-                  element: <CustomReqPage></CustomReqPage>
+                  element: <PrivateRoute><CustomReqPage></CustomReqPage></PrivateRoute>
                 },
                 {
                   path: 'mycustom',
-                  element: <MyCustomReq></MyCustomReq>
+                  element: <PrivateRoute><MyCustomReq></MyCustomReq></PrivateRoute>
                 },
                 {
                   path: 'upcustom/:id',
@@ -113,8 +122,16 @@ import AddEmployee from "../Pages/Dashboard/Admin/AddEmployee/AddEmployee";
                 },
                 {
                   path: 'profile',
-                  element:<Profile></Profile>,
-                }
+                  element:<PrivateRoute><Profile></Profile></PrivateRoute>,
+                },
+                {
+                  path: 'emhome',
+                  element:<PrivateRoute><EmployeeHome></EmployeeHome></PrivateRoute>
+                },
+                // {
+                //   path:'updateprofile',
+                //   element: <UpdateProfile></UpdateProfile>
+                // }
             ]
         }, 
         

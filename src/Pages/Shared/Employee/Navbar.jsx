@@ -1,16 +1,19 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import sp_logo from "../../../assets/s_logo.png";
 import useAuth from "../../../Hook/useAuth";
 const Navbar = () => {
   const {user, logOut} = useAuth();
+  const navigate = useNavigate();
   const handleLogOut = ()=>{
     logOut()
-    .then(()=>{})
+    .then(()=>{
+      navigate('/login')
+    })
     .catch(error=>console.error(error));
   }
     
      const Navlinks_E = <>
-     <Link to='/'>Home</Link>
+     <Link to='/dashboard/emhome'>Home</Link>
      {/* <Link to='/register'>Register</Link> */}
      <Link to='/dashboard/team'>My Team</Link>
      <Link to='/dashboard/myassets'>My Assets</Link>
@@ -28,7 +31,7 @@ const Navbar = () => {
  </>
   
     return (
-        <div className="navbar  bg-[#cf2e2e]   text-white">
+        <div className="navbar  bg-[#cf2e2e] fixed top-0 left-0 right-0 z-10  text-white">
           <div className="navbar-start">
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

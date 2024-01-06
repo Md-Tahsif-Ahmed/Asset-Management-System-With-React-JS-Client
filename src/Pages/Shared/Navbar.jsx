@@ -15,19 +15,9 @@ const Navbar = () => {
         <Link to='/dashboard'>Employee Page</Link>
     </>
   
-  const Navlinks_A = <>
-  <Link>Home</Link>
-  {/* <Link to='/register'>Register</Link> */}
-  <Link to='/menu'>My Employee List</Link>
-  <Link to='/order'>Add an Employee</Link>
-  <Link to='/login'>Asset List</Link>
-  <Link to='/login'>Add an Asset</Link>
-  <Link to='/login'>All Requests</Link>
-  <Link to='/login'>Custom Requests List</Link>
-
-</>
+   
     return (
-        <div className="navbar  bg-[#cf2e2e] fixed z-10  text-white">
+        <div className="navbar  bg-[#cf2e2e] fixed top-0 left-0 right-0 z-10 text-white">
           <div className="navbar-start">
             <div className="dropdown">
               <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">

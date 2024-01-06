@@ -12,7 +12,7 @@ const Navbar = () => {
         <Link to='/'>Home</Link>
         <Link to='/register'>Join as Employee</Link>
         <Link to='/regadmin'>Join as HR/Admin</Link>
-        <Link to='/dashboard'>Employee Page</Link>
+        
     </>
   
    

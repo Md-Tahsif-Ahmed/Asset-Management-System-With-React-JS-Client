@@ -73,7 +73,7 @@ import AdminHome from "../Pages/Admin/Homepage/AdminHome";
                 {
                   path: 'upasset/:id',
                   element: <AdminRoute><UpdateAss></UpdateAss></AdminRoute>,
-                  loader: ()=> fetch('http://localhost:3000/asset/'),
+                  loader: ()=> fetch('https://asset-management-system-server-psi.vercel.app/asset/'),
                   
                 },
                 {
@@ -101,7 +101,7 @@ import AdminHome from "../Pages/Admin/Homepage/AdminHome";
                 {
                   path: 'myassets',
                   element: <PrivateRoute><MyAsset></MyAsset></PrivateRoute>,
-                  // loader: ()=> fetch('http://localhost:3000/myreq')
+                  // loader: ()=> fetch('https://asset-management-system-server-psi.vercel.app/myreq')
                 },
                 {
                   path: 'reqassets',
@@ -118,7 +118,7 @@ import AdminHome from "../Pages/Admin/Homepage/AdminHome";
                 {
                   path: 'upcustom/:id',
                   element: <UpdateCustomReq></UpdateCustomReq>,
-                  loader: ()=> fetch('http://localhost:3000/custom'),
+                  loader: ()=> fetch('https://asset-management-system-server-psi.vercel.app/custom'),
                 },
                 {
                   path: 'profile',

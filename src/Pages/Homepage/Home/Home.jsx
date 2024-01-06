@@ -7,11 +7,13 @@ import Package from "../Package";
 const Home = () => {
     return (
         <div className="">
-          <Helmet>
+           <Helmet>
+                <title>AMS | Home</title>
+            </Helmet>
             <Banner></Banner>
             <About></About>
             <Package></Package>
-          </Helmet>
+      
          
         </div>
     );

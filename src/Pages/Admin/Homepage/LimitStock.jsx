@@ -21,8 +21,8 @@ const LimitStock = () => {
                     <th>Product Type</th>
                     <th>Quantity</th>
                     <th>Added Date</th>
-                    <th>Update</th>
-                    <th>Delete</th>
+                    {/* <th>Update</th>
+                    <th>Delete</th> */}
                 </tr>
             </thead>
             <tbody>

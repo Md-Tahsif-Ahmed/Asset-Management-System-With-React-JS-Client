@@ -90,12 +90,12 @@ const Login = () => {
                                     <span className="label-text">Captcha</span>
                                 </label>
                                 <LoadCanvasTemplate />
-                                <input type="text" disabled={disable}  onBlur={ handleValidedCapcha }   name="captcha" placeholder="type the above" className="input input-bordered" />
+                                <input type="text"  onBlur={ handleValidedCapcha }   name="captcha" placeholder="type the above" className="input input-bordered" />
                             </div>
                              
 
                             <div className="form-control mt-6">
-                                <button  className="btn bg-[#7E2553] text-white hover:bg-[#7E2553]">Login</button>
+                                <button disabled={disable} className="btn bg-[#7E2553] text-white hover:bg-[#7E2553]">Login</button>
                             </div>
                         </form>
                         <SocialLogin></SocialLogin>

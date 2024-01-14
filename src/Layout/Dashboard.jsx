@@ -12,7 +12,7 @@ const Dashboard = () => {
         {
             isAdmin?<Navbar_A></Navbar_A>:<Navbar></Navbar>
         }
-          <div className="flex-1">
+          <div className="flex-1 max-w-7xl mx-auto">
                 <Outlet></Outlet>
            </div>
          

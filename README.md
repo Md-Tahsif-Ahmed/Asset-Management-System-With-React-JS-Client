@@ -1,7 +1,7 @@
 <h1>Asset Management System</h1>
 Live Link: https://nebtahsif-badge.surge.sh
-Admin: t@gmail.com
-password: Afridi@1010
+<p>Admin: t@gmail.com
+password: Afridi@1010</p>
 <h1>Key Feature of the Website</h1>
 <ol>
   <li>This is User Authenticated website here a Company Employee can create account and an Admin panel handle the website data</li>
